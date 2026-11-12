@@ -1,0 +1,50 @@
+label	intercept	lineage
+Ciliated cells (axonemal)	0.0410327539	epithelial/secretory
+Ciliated epithelial cells (CG-enriched) [author: Ciliated epithelial cells]	0.0426418707	epithelial/secretory
+Connective/ECM (fibulin/matrilin+) [author: Hemocytes]	-0.0425256304	connective/muscle
+Connective/muscle (collagen/titin+) [author: Muscle cells]	0.0423812605	connective/muscle
+Digestive tract epithelial cells 2 (author-derived)	0.101343542	epithelial/secretory
+Digestive tract epithelial cells 3 (author-derived)	-0.0019333408	epithelial/secretory
+Epithelial (DMBT1/CYP+), adjacent tissue? [author: Digestive tract epithelial cells 1]	0.0010958655	epithelial/secretory
+Epithelial (chitin synthase+/MAM+), adjacent tissue? [author: Secretory epithelial cells 1]	0.0187915359	epithelial/secretory
+Glia — metabolic/transporter glia (GAT/taurine transporter/MCT+) [author: Metabolic glial cells 3]	-0.0327493064	neural
+Glia-like (EAAT+/MATE+/OCT+) [author: Neurons 3]	-0.0494089425	neural
+Glia-like (transporter-rich, subtype 2) [author: Neurons 1]	0.0260805208	neural
+Hemocyte-like (CDPK/CYP2B4+) [author: Phagocytic glial cells 1]	-0.0299813375	hemocyte
+Hemocyte-like (DUOX2+) [author: Sinus lining cells 1]	0.0198278129	hemocyte
+Hemocyte-like (GATA-3+/Tec+) [author: Phagocytic glial cells 1]	0.0473212004	hemocyte
+Hemocyte-like (MEGF10/draper+, phagocytic) [author: Phagocytic glial cells 1]	-0.0216096323	hemocyte
+Hemocyte-like (MPEG-lineage, GIMAP4+) [author: Phagocytic glial cells 3]	-0.0303673875	hemocyte
+Hemocyte-like (MPEG1+/PTPRε+) [author: Phagocytic glial cells 1]	0.0240885913	hemocyte
+Hemocyte-like (VC-like: HAVCR1+/NPFF receptor 2+) [author: Hemocytes]	-0.0450298041	hemocyte
+Hemocyte-like (ZIP10+/galectin-9+ granular) [author: Sinus lining cells]	0.00956350099	hemocyte
+Hemocyte-like (cathepsin K+, = gonad:23 type)	-0.00791046768	hemocyte
+Hemocyte-like (mannose receptor+, = gonad:3 type) [author: Sinus lining cells 2]	0.0202824734	hemocyte
+Hemocyte-like (peroxidase/LBP+) [author: Phagocytic glial cells 2]	0.0132634249	hemocyte
+Hemocyte-like (retinoid-inducible serine carboxypeptidase+)	-0.032850612	hemocyte
+Hemocyte-like / connective (TGFBI+) [author: Hemocytes]	0.0279399455	hemocyte
+Hemocyte-like / connective (ceruloplasmin+)	0.060902711	hemocyte
+Mucous secretory cells (glutamate-receptor+) [author: Neuroendocrine cells 2]	-0.0168102663	epithelial/secretory
+Mucous secretory cells [author: Secretory epithelial cells 2]	-0.027642725	epithelial/secretory
+Muscle cells [author: Muscle cells]	-0.0340463147	connective/muscle
+Neural progenitor cells 1 (author-derived)	0.00503562251	neural
+Neuron — cholinergic	0.00569629529	neural
+Neuron — cholinergic [author: Neurons 2]	0.011984786	neural
+Neuron — ciliated sensory (cholinergic, polycystin+) [author: Neurons 2]	-0.0514340922	neural
+Neuron — ciliated sensory (polycystin+, cholinergic) [author: Neurons 2]	-0.023347687	neural
+Neuron — monoaminergic [author: Neurons 4]	0.129703239	neural
+Neuron — peptidergic	-0.0451737344	neural
+Neuron — peptidergic [author: Neuroendocrine cells 1]	0.00962280016	neural
+Neuron — peptidergic [author: Neuroendocrine cells 2]	-0.0422205403	neural
+Neuron — peptidergic [author: Neurons 4]	-0.012646527	neural
+Neuron — peptidergic [author: Neurons 5]	-0.0370102338	neural
+Neuron — sensory-like (polycystin-2+/POU4+) [author: Sensory neurons]	0.0165586658	neural
+Neuron — subtype unresolved	0.119436063	neural
+Neuron — subtype unresolved (Lhx5+)	0.000224707022	neural
+Neuron — subtype unresolved [author: Neuroendocrine cells 1]	-0.0547272861	neural
+Neuron — subtype unresolved [author: Neuroendocrine cells 2]	-0.0304512158	neural
+Neuron — subtype unresolved [author: Neuroendocrine cells 3]	-0.0340823568	neural
+Neuron — subtype unresolved [author: Neurons 1]	-0.0395715497	neural
+Neuron — subtype unresolved [author: Neurons 2]	-0.0473010205	neural
+Neuron — subtype unresolved [author: Neurons 3]	0.0239138529	neural
+Neuron — subtype unresolved [author: Neurons 5]	-0.0278611742	neural

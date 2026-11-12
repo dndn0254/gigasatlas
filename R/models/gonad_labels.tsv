@@ -1,0 +1,29 @@
+label	intercept	lineage
+Ciliated cells (or developing oocytes)	0.116516188	gonad somatic
+Connective/ECM cells (basement membrane)	-0.0144153964	connective/muscle
+Connective/ECM cells (cartilage matrix protein+)	-0.0525834747	connective/muscle
+Epithelial (chitin synthase+), origin unresolved	0.0342711918	epithelial/secretory
+Germ cells — meiotic (spermatocytes/oocytes, SYCP1+)	-0.00705787865	germline
+Germ cells — spermatids/sperm (axonemal)	0.157317594	germline
+Germ cells — triploid-enriched, stress-high (β-gonia candidate)	-0.0290714521	germline
+Germ cells — vitellogenic oocytes	0.0365489163	germline
+Hemocyte-like (GATA-3+/Tec+, blast-like)	0.000706524879	hemocyte
+Hemocyte-like (PTPRε+)	0.0361815989	hemocyte
+Hemocyte-like (VC-like: NPFF receptor 2+/HAVCR1+)	0.00415071007	hemocyte
+Hemocyte-like (ZIP10+ granular)	0.0508085378	hemocyte
+Hemocyte-like (adhesive/motile)	0.084396556	hemocyte
+Hemocyte-like (cathepsin K/C-type lectin+)	-0.0536078773	hemocyte
+Hemocyte-like (motile, ceruloplasmin+)	0.17113705	hemocyte
+Hemocyte-like (or interstitial 'Leydig-like')	0.0434803665	hemocyte
+Hemocyte-like (retinoid-inducible serine carboxypeptidase+)	-0.0748421326	hemocyte
+Hemocyte-like? (CD109/ITIH+, 51 cells)	-0.114202552	hemocyte
+Mucous secretory cells	-0.0639456958	epithelial/secretory
+Myoepithelial / muscle-like somatic cells	-0.0369902588	gonad somatic
+Nerve-like cells	-0.00975447707	neural
+Proliferating (mitotic) cells	-0.0856075734	gonad somatic
+Sertoli/niche (supporting) cells	-0.0731919482	gonad somatic
+Sertoli/niche-like (transporter-rich)	-0.0463350341	gonad somatic
+Shell-secreting mantle epithelium (adjacent tissue)	-0.0215753112	epithelial/secretory
+Unresolved (polycystin/FGFR/netrin-receptor+)	0.0628199056	unresolved
+VCT cells (3n-specific)	-0.0750152841	gonad somatic
+VCT cells (vesicular connective tissue)	-0.0401043594	gonad somatic

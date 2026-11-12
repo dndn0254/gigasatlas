@@ -1,0 +1,22 @@
+label	intercept	lineage
+Ciliated cells	0.0228777938	epithelial/secretory
+Connective (cartilage matrix protein+)	0.23824808	connective/muscle
+Hemocyte-like (C1q-TNF/adiponectin+, M1 member)	0.871661365	hemocyte
+Hemocyte-like (Elf-3/neuropilin+)	0.0346902721	hemocyte
+Hemocyte-like (SOD/LDLR/serum amyloid A+)	-0.20768486	hemocyte
+Hemocyte-like (VC-like: Rab-20/NPFF receptor 2+)	0.103084803	hemocyte
+Hemocyte-like (cathepsin K+, = gonad:23 type)	-0.0551870465	hemocyte
+Hemocyte-like (granular/SGC-like, galectin-9+)	0.00930373184	hemocyte
+Hemocyte-like (natterin-3+)	-0.101831913	hemocyte
+Hemocyte-like? (rhamnose-binding lectin+)	-0.259206057	hemocyte
+Hyalinocyte-like or connective (TIMP+)	-0.259030849	hemocyte
+Mucous secretory cells (mucin/PIF+)	-0.00224606344	epithelial/secretory
+Muscle cells	-0.392693758	connective/muscle
+Muscle/connective (adductor actin/collagen+)	0.271054149	connective/muscle
+Neuron — peptidergic (7B2+)	0.169696867	neural
+Neuron — peptidergic-like	-0.126921669	neural
+Neuron — sensory-like (polycystin-2+)	-0.0601434149	neural
+Shell-secreting epithelium (gigasin-6/DSPP+)	0.0823068842	epithelial/secretory
+Shell-secreting epithelium (tyrosinase+/mantle protein+)	0.222856149	epithelial/secretory
+Unresolved (C-type lectin/PC1+)	-0.299737573	unresolved
+Unresolved (PCDH23/PGRP/Musashi+)	-0.261075735	unresolved

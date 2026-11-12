@@ -1,0 +1,8 @@
+# Roslin v1 gene IDs as used in older oyster papers: Ensembl Metazoa G##### and RefSeq LOC / GeneID. One per line.
+G11998
+G5032
+G29424
+LOC105348812
+LOC117688139
+LOC105348378
+LOC117690076

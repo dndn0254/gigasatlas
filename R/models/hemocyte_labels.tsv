@@ -1,0 +1,16 @@
+label	intercept	lineage
+Contaminant — muscle cells in hemolymph	-0.0951639861	connective/muscle
+Hemocyte — blast-like (DLFD c5)	-0.103711896	hemocyte
+Hemocyte — blast-like (DLFD c5), GIMAP+	-0.205128744	hemocyte
+Hemocyte — blast-like (DLFD c6)	-0.177191764	hemocyte
+Hemocyte — blast-like (DLFD c6), hhex+/GATA-3+	-0.17186828	hemocyte
+Hemocyte — blast-like, proliferating	0.0251236651	hemocyte
+Hemocyte — blast-like/progenitor (DLFD c4)	-0.04090745	hemocyte
+Hemocyte — granular, ZIP10+/copper-transport	-0.165475115	hemocyte
+Hemocyte — hyalinocytes (H)	0.0334819369	hemocyte
+Hemocyte — hyalinocytes (H), ECM-high	0.0236238912	hemocyte
+Hemocyte — macrophage-like (ML)	0.398459554	hemocyte
+Hemocyte — small granule cells (SGC)	0.200124606	hemocyte
+Hemocyte — subtype unresolved	0.467695087	hemocyte
+Hemocyte — subtype unresolved (phagocytic markers)	-0.212981969	hemocyte
+Hemocyte — vesicular cells (VC)	0.0239235274	hemocyte

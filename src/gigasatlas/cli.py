@@ -99,7 +99,7 @@ def main(argv=None):
         A = _annotate(example_data(), "development", quiet=True)
         agree = (A.obs["gigas_label"].astype(str) == A.obs["author_label"].astype(str)).mean()
         print(f"   {(A.obs['gigas_status'] == 'confident').mean():.0%} confident; same name as the authors for {agree:.0%} of cells")
-        print("   (optimistic: these cells were in the training data; held-out accuracy is 0.91-0.92)")
+        print("   (optimistic: these cells were in the training data; held-out accuracy is 0.92-0.93)")
         print(A.obs[["author_label", "gigas_label", "gigas_prob"]].head(5).to_string())
         print("\n== 2. Which cell types does a gene list point to? 200 genes up in sorted granulocytes")
         print(cell_type_enrichment(example_gene_list()).head(5)[["cell_type", "overlap", "set_size", "q"]].to_string(index=False))

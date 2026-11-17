@@ -1,6 +1,8 @@
 #!/bin/bash
-# Step 4: align and count one 10x library with STARsolo, using the Cell Ranger-matched settings of the Gigas Cell Atlas.
-# usage: bash 03_starsolo.sh <R1.fastq.gz> <R2.fastq.gz> <ref_dir from step 1> <out_dir> <v2|v3> [threads]
+# Step 4, option: count one 10x library with STARsolo, using settings matched to Cell Ranger (the atlas default is 03_cellranger.sh).
+# Use it when Cell Ranger cannot be installed, for speed, or as a second counter to compare with (05_compare_counters.R).
+# Needs the STAR index: bash 01_get_reference.sh ref/ 8 star
+# usage: bash 03b_starsolo.sh <R1.fastq.gz> <R2.fastq.gz> <ref_dir from step 1> <out_dir> <v2|v3> [threads]
 #   R1 = barcode + UMI, R2 = cDNA. v2: 16 nt barcode + 10 nt UMI; v3 / v3.1: 16 nt barcode + 12 nt UMI.
 # output: <out_dir>/Solo.out/Gene/filtered (whole cells) and Solo.out/GeneFull/filtered (nuclei: exons + introns)
 set -euo pipefail
@@ -14,5 +16,4 @@ STAR --runThreadN "$THR" --genomeDir "$REF/star_index" --readFilesIn "$R2" "$R1"
      --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR \
      --clipAdapterType CellRanger4 --soloFeatures Gene GeneFull --soloCellFilter EmptyDrops_CR --soloMultiMappers Unique
 grep "Estimated Number of Cells" "$OUT/Solo.out/Gene/Summary.csv"
-# Non-10x chemistry (for example BMK): set --soloCBlen / --soloUMIstart / --soloUMIlen to the read layout and use
-# --soloCBwhitelist None (the atlas did this for the BMK mantle library: barcode 1-16, UMI 17-28).
+# Non-10x droplet chemistry (for example BMKMANU DG1000): see 03c_non10x.sh.

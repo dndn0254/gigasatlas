@@ -1,8 +1,8 @@
 # gigasatlas
 
 Name the cells of new Pacific oyster (*Magallana gigas*, syn. *Crassostrea gigas*) single-cell data in one command,
-using the Gigas Cell Atlas: 186,414 cells from 8 public studies, re-processed from raw reads on the current genome
-(xbMagGiga1.1, RefSeq annotation RS_2024_06). Website: https://dndn0254.github.io/gigas-atlas/
+using the Gigas Cell Atlas: 203,071 cells from 8 public studies, re-processed from raw reads with Cell Ranger 7.0.1 on the current
+genome (xbMagGiga1.1, RefSeq annotation RS_2024_06). Website: https://dndn0254.github.io/gigas-atlas/
 
 | What you have | Command | What you get |
 |---|---|---|
@@ -17,16 +17,19 @@ library of the Gigas Cell Atlas:
 
 | Step | Program | Script |
 |---|---|---|
-| Reference genome + gene annotation (GTF), STAR index | NCBI xbMagGiga1.1 (RS_2024_06), STAR 2.7.11b | `pipeline/01_get_reference.sh` |
+| Reference genome + gene annotation (GTF), Cell Ranger reference | NCBI xbMagGiga1.1 (RS_2024_06), `cellranger mkref` | `pipeline/01_get_reference.sh` |
 | Reads from SRA (or your own FASTQ) | SRA Toolkit | `pipeline/02_get_reads.sh` |
-| Align, count, call cells (Cell Ranger-matched) | STARsolo 2.7.11b | `pipeline/03_starsolo.sh` |
+| Align, count, call cells | **Cell Ranger 7.0.1** (default) | `pipeline/03_cellranger.sh` |
+| ... data Cell Ranger cannot read (non-10x barcodes) | barcode conversion + Cell Ranger, STARsolo check | `pipeline/03c_non10x.sh` |
+| ... no Cell Ranger, or a second count | STARsolo 2.7.11b, Cell Ranger-matched (option) | `pipeline/03b_starsolo.sh` |
+| Compare two counts of one library | R, Seurat | `pipeline/05_compare_counters.R` |
 | QC (median - 3 MAD), doublets, Seurat clusters, UMAP, markers | R, Seurat 5, scDblFinder | `pipeline/04_seurat.R` |
 | Cell names from the atlas | gigasatlas (R) | `pipeline/04_seurat.R` |
 
 ```bash
-bash pipeline/01_get_reference.sh ref/                                   # once
-bash pipeline/03_starsolo.sh R1.fastq.gz R2.fastq.gz ref/ out/sample/ v3
-Rscript pipeline/04_seurat.R out/sample/Solo.out/Gene/filtered gonad sample_named.rds
+bash pipeline/01_get_reference.sh ref/ 16                                # once (cellranger mkref, ~10 min)
+bash pipeline/03_cellranger.sh fq/ sample ref/ out/ nuclei              # see pipeline/README.md for file names
+Rscript pipeline/04_seurat.R out/sample/outs/filtered_feature_bc_matrix gonad sample_named.rds
 ```
 
 ## 1. Seurat (R) users
@@ -87,7 +90,7 @@ Real output (Linux, Python 3.11; takes about 10 s):
 400 cells, 19,395 genes; 92% of the 'development' model genes found
 == 1. Name cells: 400 gastrula cells, model 'development'
    100% confident; same name as the authors for 92% of cells
-   (optimistic: these cells were in the training data; held-out accuracy is 0.91-0.92)
+   (optimistic: these cells were in the training data; held-out accuracy is 0.92-0.93)
                            author_label gigas_label  gigas_prob
 E4_AGACCATAGCAAGTCG                Un-M        Un-M    0.999812
 E4_TGCGGCAAGATTGCGG                Un-M        Un-M    0.999806
@@ -238,13 +241,14 @@ ga.convert(["G11998", "LOC117688139"])                             # old -> new 
 
 | Test | Truth | Cells | Accuracy | Guessing the most common name |
 |---|---|---:|---:|---:|
-| Gastrula embryo, hold out 1 of 4 libraries (4 runs) | authors' names | 4,499-4,752 | 0.91-0.92 | 0.11-0.12 |
-| Ganglia, cerebral -> visceral library | atlas names | 19,672 | 0.74 | 0.20 |
-| Ganglia, visceral -> cerebral library | atlas names | 13,457 | 0.73 | 0.25 |
-| Gonad, 2024 study -> 2025 study (diploid and triploid) | atlas names | 26,369 | 0.74 | 0.21 |
-| Blood, healthy oyster -> primed hemocytes (another lab) | atlas names | 41,453 | 0.83 | 0.18 |
+| Gastrula embryo, hold out 1 of 4 libraries (4 runs) | authors' names | 4,360-4,621 | 0.92-0.93 | 0.10-0.12 |
+| Ganglia, cerebral -> visceral library | atlas names | 19,085 | 0.75 | 0.21 |
+| Ganglia, visceral -> cerebral library | atlas names | 12,771 | 0.75 | 0.25 |
+| Gonad, 2024 study -> 2025 study (diploid and triploid) | atlas names | 26,030 | 0.74 | 0.21 |
+| Blood, healthy oyster -> primed hemocytes (another lab) | atlas names | 40,445 | 0.82 | 0.18 |
 
-Cells called `confident` are 83-99% of cells and are right more often (0.77-0.93).
+Cells called `confident` are 83-99% of cells and are right more often (0.78-0.94).
+Cells that only Cell Ranger called (their names came from the atlas model) were left out of training and testing.
 The example cells in `gigasatlas demo` were part of the training data, so their agreement with the authors is
 higher than you should expect on new data.
 

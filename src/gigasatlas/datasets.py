@@ -7,7 +7,7 @@ example_gene_list()   200 genes higher in sorted granulocytes than hyalinocytes
 example_old_ids()     Roslin v1 gene IDs (Ensembl G##### and RefSeq LOC) as used in older papers.
 
 Note: the bundled 'development' model was trained on all four gastrula libraries, so names on the
-example cells look better than on truly new data (held-out accuracy 0.91-0.92, see README).
+example cells look better than on truly new data (held-out accuracy 0.92-0.93, see README).
 """
 from __future__ import annotations
 

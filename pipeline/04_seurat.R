@@ -1,6 +1,7 @@
 # Step 5-6: quality control, doublets, Seurat analysis and atlas names for one oyster library.
-# usage: Rscript 04_seurat.R <STARsolo filtered folder> <gigasatlas model> <out.rds> [path to R/gigasatlas.R]
-#   folder: out/sample/Solo.out/Gene/filtered (cells) or Solo.out/GeneFull/filtered (nuclei)
+# usage: Rscript 04_seurat.R <filtered count folder> <gigasatlas model> <out.rds> [path to R/gigasatlas.R]
+#   folder: Cell Ranger out/<sample>/outs/filtered_feature_bc_matrix (default), or STARsolo
+#           out/sample/Solo.out/Gene/filtered (cells) or Solo.out/GeneFull/filtered (nuclei)
 #   model : lineage, development, hemocyte, gonad, ganglia or mantle
 # needs: R >= 4.3, Seurat >= 5; optional scDblFinder (Bioconductor) for doublets.
 suppressPackageStartupMessages(library(Seurat))
@@ -10,7 +11,7 @@ GA <- if (length(a) > 3) a[4] else "https://raw.githubusercontent.com/dndn0254/g
 source(GA)
 set.seed(0)
 
-# --- counts (STARsolo writes the same three files as Cell Ranger, gzipped or not)
+# --- counts (Cell Ranger and STARsolo write the same three files, gzipped or not)
 read_solo <- function(d) {
   f <- function(n) { p <- file.path(d, n); if (file.exists(p)) p else paste0(p, ".gz") }
   m <- Matrix::readMM(f("matrix.mtx"))
@@ -20,7 +21,7 @@ read_solo <- function(d) {
 }
 m <- read_solo(IN)
 seu <- CreateSeuratObject(m, min.cells = 0, min.features = 0)
-cat("cells called by STARsolo:", ncol(seu), "\n")
+cat("cells called by the counter:", ncol(seu), "\n")
 
 # --- quality control: drop cells below the library median - 3 MAD of log UMIs or log genes (lower tail only)
 low <- function(x) { lx <- log1p(x); median(lx) - 3 * mad(lx) }
